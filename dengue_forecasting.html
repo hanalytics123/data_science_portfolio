@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dengue Forecasting Project | Data Science Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Data Science Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="dengue_forecasting.html">Dengue Forecasting</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Predicting Dengue Cases Using<br />
+									Climate and Environmental Data</h1>
+									<p>A one-week-ahead forecasting project using public dengue surveillance,
+									climate and environmental data.</p>
+								</header>
+
+								<div class="image main"><img src="images/pic02.jpg" alt="Dengue forecasting project visual" /></div>
+
+								<h2>Project Summary</h2>
+								<p>This project investigates whether climate and environmental variables can improve short-term dengue case forecasting for Maynas, Loreto, Peru. Historical dengue surveillance data was combined with rainfall, temperature, humidity, wind, pressure and vegetation indicators to create a weekly modelling dataset.</p>
+								<p>The final modelling task was framed as a one-week-ahead regression problem. Information available up to week <code>t-1</code> was used to predict dengue cases in week <code>t</code>, helping prevent leakage from the target week into the model inputs.</p>
+
+								<h2>Research Questions</h2>
+								<ul>
+									<li>Can weekly dengue cases be forecast one week ahead using historical dengue incidence?</li>
+									<li>Do climate and environmental variables improve prediction beyond dengue history and seasonality?</li>
+									<li>Which modelling approach provides the most accurate forecasts?</li>
+									<li>Do machine-learning approaches outperform traditional time-series methods?</li>
+								</ul>
+
+								<h2>Methods</h2>
+								<ul>
+									<li>Data cleaning, integration and quality checks</li>
+									<li>Exploratory data analysis and visualisation</li>
+									<li>Lagged and rolling feature engineering</li>
+									<li>Chronological train, validation and final-test split</li>
+									<li>Model comparison using MAE, RMSE and R&sup2;</li>
+									<li>Feature importance and higher-incidence week error analysis</li>
+								</ul>
+
+								<h2>Models Compared</h2>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Model</th>
+												<th>Feature Set</th>
+												<th>Final Test MAE</th>
+												<th>Final Test RMSE</th>
+												<th>Final Test R&sup2;</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>XGBoost</td>
+												<td>History + climate</td>
+												<td><strong>11.13</strong></td>
+												<td><strong>21.22</strong></td>
+												<td><strong>0.855</strong></td>
+											</tr>
+											<tr>
+												<td>Persistence</td>
+												<td>Previous week's cases</td>
+												<td>11.22</td>
+												<td>22.00</td>
+												<td>0.844</td>
+											</tr>
+											<tr>
+												<td>XGBoost</td>
+												<td>History only</td>
+												<td>11.45</td>
+												<td>22.35</td>
+												<td>0.839</td>
+											</tr>
+											<tr>
+												<td>SARIMA</td>
+												<td>History + seasonality</td>
+												<td>12.14</td>
+												<td>21.67</td>
+												<td>0.849</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<h2>Key Findings</h2>
+								<ul>
+									<li>The climate-enhanced XGBoost model achieved the best final holdout performance.</li>
+									<li>Recent dengue incidence was the strongest predictor of one-week-ahead dengue cases.</li>
+									<li>Climate and environmental variables provided a modest improvement over the equivalent history-only XGBoost model.</li>
+									<li>Higher-incidence weeks remained harder to forecast, but the climate-enhanced XGBoost model performed best for this subgroup.</li>
+									<li>The final evaluation showed why an untouched future holdout is important, as validation results did not perfectly match final-test performance.</li>
+								</ul>
+
+								<h2>Skills Demonstrated</h2>
+								<p><code>Python</code> <code>pandas</code> <code>exploratory data analysis</code> <code>feature engineering</code> <code>machine learning</code> <code>XGBoost</code> <code>SARIMA</code> <code>model evaluation</code> <code>data visualisation</code></p>
+
+								<ul class="actions special">
+									<li><a href="https://github.com/hanalytics123/dengue_climate_forecasting" class="button large">View Repository</a></li>
+									<li><a href="Dengue Cases Forecasting / Dengue Forecasting Notebook.ipynb" class="button large">View Notebook</a></li>
+									<li><a href="Dengue Cases Forecasting / data.csv" class="button large">Download Dataset</a></li>
+									<li><a href="index.html" class="button large">Back to Portfolio</a></li>
+								</ul>
+
+								<p><em>Note: replace the repository button link with the anonymised repository URL before final submission.</em></p>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>Data Science Portfolio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
